@@ -41,6 +41,8 @@ Once the application is running, you can test the API endpoints locally by acces
 
 ## API Usage
 
+Database configurations are for Redis Server
+
 The API documentation is available via Swagger at `/public/swagger.html`. Key API endpoints include for localhost http://localhost:8080//public/swagger.html:
 
 -   `/signup`: For user registration.
