@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InetCare DoctorAI Project Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .highlight {
+            background-color: #eaf2f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .api-endpoint {
+            font-weight: bold;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>InetCare DoctorAI Project Documentation</h1>
+
+    <div class="section">
+        <h2>Project Purpose</h2>
+        <p>The DoctorAI project aims to reduce Kenya's disease burden by providing real-time access to localized clinical information. The system is designed to address inconsistencies in clinical diagnoses across facilities and practitioners. By enabling clinicians to share and access standardized diagnoses and prognoses, the system mitigates variability in healthcare delivery. It offers uniform, evidence-based disease diagnosis and prognosis informed by data inputted by healthcare workers across Kenya.</p>
+
+        <p>Medical errors and delayed interventions can be life-threatening, especially where specialist consultation is unavailable. This system fills the gap of a unified, national reference point for medical conditions by serving as a single, authoritative repository of clinical knowledge and decision support.</p>
+
+        <div class="highlight">
+            <h3>Commercialization Context</h3>
+            <p>In many parts of the world, frontline healthcare workers make life-or-death decisions under pressure, with limited resources and specialist support. This challenge takes you to the heart of Kenyan healthcare, where nurses working across diverse counties and health facility levels face real-world clinical cases every day.</p>
+            
+            <p>The system is built on a robust dataset of 400 authentic clinical prompts—each one a carefully crafted vignette combining a nurse's background and a complex medical situation. These vignettes span a wide range of medical domains, from maternal and child health to critical care, and were originally evaluated by expert clinicians and leading AI models (including GPT-4.0, LLAMA, and GEMINI).</p>
+        </div>
+
+        <p>The system is powered by nationally recognized medical standards and guidelines, including:</p>
+        <ul>
+            <li>Kenya Essential Medicines List (KEML)</li>
+            <li>Kenya Standard Treatment Guidelines</li>
+            <li>Kenya Expanded Programme on Immunization (KEPI)</li>
+            <li>Kenya HIV Treatment Guidelines</li>
+            <li>Kenya Malaria Treatment Guidelines</li>
+        </ul>
+
+        <p>To build and validate this system, a robust challenge dataset was assembled, comprising 400 real-world clinical vignettes that reflect the complexity of frontline care in Kenya. These vignettes span maternal, pediatric, and critical care scenarios and have been evaluated by expert clinicians alongside leading AI models. This unique testbed enables the system to learn from both human expertise and advanced machine reasoning, creating a powerful tool for clinical decision support.</p>
+
+        <p>By harmonizing diagnosis practices and enhancing access to standardized treatment protocols, this system stands to revolutionize healthcare delivery in Kenya—improving quality of care, reducing preventable morbidity and mortality, and ultimately lowering the national disease burden.</p>
+    </div>
+
+    <div class="section">
+        <h2>Project Partners</h2>
+        <p><strong>PATH</strong> is an international NGO dedicated to health innovation to close the global health equity gap. PATH Living Labs (LL) Initiative is a global team of 44 human-centered design specialists dedicated to co-creating solutions with users to rapidly design, test, and scale products to their long-standing challenges.</p>
+        
+        <p>The Living Labs team, in collaboration with Moi University created the dataset for this challenge as part of a project investment focused on evaluating generative AI tools in healthcare settings. <a href="https://www.path.org/who-we-are/programs/digital-health/large-language-models-for-health-equity/" target="_blank">Learn more about this initiative</a>.</p>
+        
+        <div class="highlight">
+            <h3>Global AI Summit on Africa</h3>
+            <p>The Centre for the Fourth Industrial Revolution and the Ministry of ICT & Innovation, in collaboration with the World Economic Forum, will host the inaugural Global AI Summit on Africa in Kigali, Rwanda under the theme: "AI and Africa's Demographic Dividend: Reimagining Economic Opportunities for Africa's Workforce."</p>
+            <p>This premier event will gather world leaders, government ministers, CEOs, civil society, start-ups, investors, and international organizations to shape Africa's role in the global AI economy.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Project Layout</h2>
+        <p>The project is structured to separate the application's logic, configuration, and static assets. Here's a breakdown of the key directories:</p>
+        <ul>
+            <li><code>src/</code>: Contains the source code for the application.
+                <ul>
+                    <li><code>actions/</code>: Defines the actions that the API can perform, such as user sign-in, sign-up, and accessing clinical information.</li>
+                    <li><code>config/</code>: Includes configuration files for the application, such as API settings, Redis connection, and routing.</li>
+                    <li><code>models/</code>: Defines the data models used in the application, such as the User model.</li>
+                    <li><code>types/</code>: Contains TypeScript type definitions, including clinical types specific to the Kenyan context.</li>
+                </ul>
+            </li>
+            <li><code>public/</code>: Contains static assets served by the application, such as HTML pages for sign-in, sign-up, and the chat interface, as well as CSS and images.</li>
+            <li><code>__tests__/</code>: Contains test files for the application's functionality.</li>
+            <li><code>package.json</code>: Defines the project's dependencies and scripts for running the application.</li>
+            <li><code>tsconfig.json</code>: Configures the TypeScript compiler.</li>
+            <li><code>.idx/</code>: Contains configuration files for the development environment.</li>
+            <li><code>.vscode/</code>: Contains settings for the VS Code editor.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>API Usage</h2>
+        <p>Once the application is running, you can test the API endpoints locally by accessing them through <code>localhost</code>. The API documentation, which details all available endpoints, is available via Swagger at <code>/public/swagger.html</code>.</p>
+
+        <p>Key API endpoints include (for localhost <a href="http://localhost:8080/public/swagger.html" target="_blank">http://localhost:8080/public/swagger.html</a>):</p>
+        <ul>
+            <li><span class="api-endpoint">/signup</span>: For user registration.</li>
+            <li><span class="api-endpoint">/signin</span>: For user authentication.</li>
+            <li><span class="api-endpoint">/doctor</span>: For accessing clinical decision support functionalities.</li>
+        </ul>
+
+        <p>To run the APIs, use the following command: <code>npm start</code></p>
+    </div>
+
+    <div class="section">
+        <h2>Dataset Information</h2>
+        <p>The system is built on a carefully curated dataset of 400 clinical vignettes that represent real-world scenarios faced by healthcare workers in Kenya:</p>
+        <ul>
+            <li>Each vignette combines a nurse's background with a complex medical situation</li>
+            <li>Scenarios span maternal, pediatric, and critical care domains</li>
+            <li>Includes details like patient presentation, nurse experience level, and facility type</li>
+            <li>Originally evaluated by expert clinicians and leading AI models (GPT-4.0, LLAMA, GEMINI)</li>
+            <li>Reflects the nuance and challenge of real clinical environments in Kenya</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Note:</strong> While the dataset is small (400 training and 100 test samples), it represents high-quality, expert-labeled medical data that accurately reflects the constraints and pressures faced by healthcare workers in underserved regions. In resource-limited settings, clinical decisions must be fast, accurate, and sensitive to both patient condition and system limitations.</p>
+        </div>
+    </div>
+</body>
+</html>

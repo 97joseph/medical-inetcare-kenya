@@ -1,0 +1,167 @@
+{
+    "info": {
+      "name": "DoctorAI API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "_postman_id": "your-collection-id"
+    },
+    "item": [
+      {
+        "name": "Authentication",
+        "item": [
+          {
+            "name": "Signup",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"email\": \"newuser@example.com\",\n  \"password\": \"newpassword\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/signup",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "signup"
+                ]
+              },
+              "description": "Registers a new user."
+            },
+            "response": []
+          },
+          {
+            "name": "Signin",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/signin",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "signin"
+                ]
+              },
+              "description": "Signs in an existing user."
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "DoctorAI",
+        "item": [
+          {
+            "name": "doctorai",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"message\": \"I have a headache\",\n  \"sessionId\": \"123\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/doctorai",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "doctorai"
+                ]
+              },
+              "description": "Interacts with an AI doctor."
+            },
+            "response": []
+          },
+          {
+            "name": "getAllDoctorAISessions",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/getAllDoctorAISessions",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "getAllDoctorAISessions"
+                ]
+              },
+              "description": "Retrieves all active DoctorAI conversation sessions."
+            },
+            "response": []
+          },
+          {
+            "name": "getDoctorAIMessages",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/getDoctorAIMessages",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "getDoctorAIMessages"
+                ]
+              },
+              "description": "Retrieves conversation messages for a DoctorAI session (random session)."
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Users",
+        "item": [
+          {
+            "name": "getAllUsers",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/getAllUsers",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "getAllUsers"
+                ]
+              },
+              "description": "Retrieves all registered users."
+            },
+            "response": []
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:8080",
+        "type": "string",
+        "description": "Base URL of the DoctorAI API"
+      }
+    ]
+  }
